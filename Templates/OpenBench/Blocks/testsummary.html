@@ -11,28 +11,28 @@
 {% load mytags %}
 <tr class="w-100 text-light" onclick="location.href='/test/{{ test.id }}'">
     <td class="w-10">
-        <a class="text-left btn btn-primary-outline btn-block btn-link text-decoration-none" href="/user/{{ test.author }}" role="button">
+        <a class="text-start btn btn-primary-outline btn-block btn-link text-decoration-none" href="/user/{{ test.author }}" role="button">
             {{ test.author|capfirst|slice:":6" }}
         </a>
     </td>
-    <td class="text-left text-truncate w-10">
-        <a class="text-left btn btn-primary-outline btn-block" role="button">{{ test.engine }}</a>
+    <td class="text-start text-truncate w-10">
+        <a class="text-start btn btn-primary-outline btn-block" role="button">{{ test.engine }}</a>
     </td>
     {% if test.error %}
-        <td class="text-left text-truncate mw-30">
-            <a class="text-left btn btn-outline-danger btn-block text-danger" href="/test/{{ test.id }}"
+        <td class="text-start text-truncate mw-30">
+            <a class="text-start btn btn-outline-danger btn-block text-bg-danger" href="/test/{{ test.id }}"
                                                role="button"><span>[x]</span> {{ test|prettyDevName }}
             </a>
         </td>
     {% elif  test|testIsFRC %}
-        <td class="text-left text-truncate mw-30">
-            <a class="text-left btn btn-primary-outline btn-block" href="/test/{{ test.id }}" role="button">
+        <td class="text-start text-truncate mw-30">
+            <a class="text-start btn btn-primary-outline btn-block" href="/test/{{ test.id }}" role="button">
                 {{ test|prettyDevName }}
                 <span style="color: green">[FRC]</span>
             </a>
         </td>
     {% else %}
-        <td class="text-left text-truncate mw-30"><a class="text-left btn btn-primary-outline btn-block"
+        <td class="text-start text-truncate mw-30"><a class="text-start btn btn-primary-outline btn-block"
                                                href="/test/{{ test.id }}" role="button">{{ test|prettyDevName }}</a>
         </td> {% endif %}
 
